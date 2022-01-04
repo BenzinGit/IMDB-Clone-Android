@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2B2E4A"
+    tools:context=".Activities.MainMenuActivity">
+
+    <EditText
+        android:id="@+id/searchField"
+        android:layout_width="258dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="75dp"
+        android:layout_marginEnd="75dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#D3D3D3"
+        android:drawableStart="@drawable/ic_baseline_movie_24"
+        android:drawablePadding="10dp"
+        android:drawableTint="#99F1F1F1"
+        android:ems="10"
+        android:hint="Movie title..."
+        android:inputType="textPersonName"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#85CDCDCD"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/searchButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/searchButton"
+        android:layout_width="261dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginEnd="150dp"
+        android:layout_marginBottom="8dp"
+        android:backgroundTint="#E84545"
+        android:onClick="searchButtonClicked"
+        android:text="Search"
+        app:icon="@android:drawable/ic_menu_search"
+        app:layout_constraintBottom_toTopOf="@+id/imageSwitch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/myListButton"
+        android:layout_width="261dp"
+        android:layout_height="69dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginEnd="150dp"
+        android:layout_marginBottom="80dp"
+        android:backgroundTint="#E84545"
+        android:drawableLeft="@drawable/ic_baseline_format_list_bulleted_24"
+        android:drawablePadding="10dp"
+        android:onClick="myListClicked"
+        android:text="My List"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Switch
+        android:id="@+id/imageSwitch"
+        android:layout_width="259dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginEnd="76dp"
+        android:layout_marginBottom="67dp"
+        android:checked="true"
+        android:onClick="imagesSwitched"
+        android:text="Display images"
+        android:textColor="#F1F1F1"
+        android:thumbTint="#903749"
+        android:trackTint="#000000"
+        app:layout_constraintBottom_toTopOf="@+id/myListButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2B2E4A"
+    tools:context=".Activities.MovieViewActivity">
+
+    <RelativeLayout
+        android:id="@+id/loadingScreen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        tools:visibility="visible">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="130px"
+            android:text="Loading..."
+            android:textColor="#D6D6D6" />
+
+        <ProgressBar
+            android:id="@+id/loadingWheel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:indeterminateTint="#E84545"
+            android:progressBackgroundTint="#8F0303" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/backButton3"
+        android:layout_width="56dp"
+
+        android:layout_height="47dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="2dp"
+        android:backgroundTint="#E84545"
+        android:color="#66FF0000"
+        android:onClick="backClicked"
+        app:icon="@drawable/ic_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/homeButton3"
+        android:layout_width="56dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="#E84545"
+        android:onClick="homeClicked"
+        app:icon="@drawable/ic_home"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RelativeLayout
+        android:id="@+id/errorScreen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        tools:visibility="visible">
+
+        <TextView
+            android:id="@+id/errorText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="130px"
+            android:textColor="#FFFFFF" />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/poster"
+        android:layout_width="105dp"
+        android:layout_height="154dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/image_not_found" />
+
+    <TextView
+        android:id="@+id/movieTitleBox"
+        android:layout_width="256dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="50dp"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/poster"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/yearBox"
+        android:layout_width="41dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="4dp"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toEndOf="@+id/poster"
+        app:layout_constraintTop_toBottomOf="@+id/movieTitleBox" />
+
+    <TextView
+        android:id="@+id/runtimeBox"
+        android:layout_width="60dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="4dp"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toEndOf="@+id/yearBox"
+        app:layout_constraintTop_toBottomOf="@+id/movieTitleBox" />
+
+    <ListView
+        android:id="@+id/listViewMovieList"
+        android:layout_width="fill_parent"
+        android:layout_height="250dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/addToListButton"
+        android:layout_width="320dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="4dp"
+        android:backgroundTint="#E84545"
+        android:drawableLeft="@drawable/ic_add"
+        android:drawableTint="#FFFFFF"
+        android:onClick="addToListClicked"
+        android:text="Add to list"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/findSimilarButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/findSimilarButton"
+        android:layout_width="320dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="100dp"
+        android:backgroundTint="#E84545"
+        android:onClick="findSimilarClicked"
+        android:text="FIND SIMILAR"
+        android:textSize="14sp"
+        app:icon="@drawable/ic_baseline_movie_filter_24"
+        app:layout_constraintBottom_toTopOf="@+id/listViewMovieList"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <RatingBar
+        android:id="@+id/ratingBar"
+        style="@android:style/Widget.DeviceDefault.Light.RatingBar.Small"
+        android:layout_width="82dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="8dp"
+        android:isIndicator="true"
+        android:numStars="5"
+        android:progressTint="#E84545"
+        android:rating="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/poster" />
+
+    <TextView
+        android:id="@+id/plotBox"
+        android:layout_width="211dp"
+        android:layout_height="102dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="4dp"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toEndOf="@+id/poster"
+        app:layout_constraintTop_toBottomOf="@+id/yearBox" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
